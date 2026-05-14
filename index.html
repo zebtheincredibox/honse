@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honse by Zebberwebber</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* The Main Honse Container */
+        #main-content, #license-content {
+            padding: 40px;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Animated Horse Emoji */
+        .emoji {
+            font-size: 150px;
+            margin: 0;
+            display: inline-block;
+            cursor: pointer;
+            animation: float 3s ease-in-out infinite;
+            image-rendering: pixelated; /* Keeps pixel art sharp if used */
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        /* The "honse" text style */
+        .text {
+            font-size: 80px;
+            text-transform: uppercase;
+            margin: 10px 0;
+            letter-spacing: 8px;
+            color: #fff;
+            text-shadow: 5px 5px 0px #ff00ff, -3px -3px 0px #00ffff; /* Glitch effect */
+        }
+
+        /* Navigation / License link */
+        .subtext {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            color: #555;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 30px;
+            display: block;
+            text-transform: lowercase;
+        }
+
+        .subtext:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #fff;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* License Box Styling */
+        .license-box {
+            max-width: 600px;
+            line-height: 1.8;
+            font-family: 'Courier New', Courier, monospace;
+            background: #111;
+            padding: 30px;
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+        }
+
+        button {
+            background: #222;
+            border: 1px solid #444;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 25px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button:hover {
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main View -->
+    <div id="main-content">
+        <div class="emoji" onclick="honseSound()">🐎</div>
+        <p class="text">honse</p>
+        <a class="subtext" onclick="showLicense()">[ view_license_cc0 ]</a>
+    </div>
+
+    <!-- License View -->
+    <div id="license-content" class="hidden">
+        <div class="license-box">
+            <p>I, <strong>zebberwebber</strong>, dedicate this work ('Honse') to the public domain using the CC0 1.0 Universal license. I waive all copyright and related rights to the extent possible under law.</p>
+        </div>
+        <button onclick="showMain()">RETURN_TO_HONSE</button>
+    </div>
+
+    <script>
+        function showLicense() {
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('license-content').classList.remove('hidden');
+        }
+
+        function showMain() {
+            document.getElementById('license-content').classList.add('hidden');
+            document.getElementById('main-content').classList.remove('hidden');
+        }
+
+        // Fun little extra: console log for dev mode
+        console.log("Honse status: Operational");
+        console.log("Developer: Zebberwebber");
+    </script>
+
+</body>
+</html>
